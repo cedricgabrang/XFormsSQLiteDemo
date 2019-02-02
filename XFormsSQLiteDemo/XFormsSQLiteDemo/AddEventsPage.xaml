@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XFormsSQLiteDemo.AddEventsPage"
+             Title="Event Details">
+    
+    <ContentPage.Content>
+        <StackLayout Margin="25">
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <StackLayout Margin="0,0,0,10">
+                    <Label Text="Title" FontSize="Medium" FontAttributes="Bold"></Label>
+                    <Entry x:Name="entryTitle" Placeholder="Type here..."></Entry>
+                </StackLayout>
+
+                <StackLayout Margin="0,0,0,10">
+                    <Label Text="When" FontSize="Medium" FontAttributes="Bold"></Label>
+                    <StackLayout Orientation="Horizontal">
+                        <DatePicker x:Name="dpEventDate" Format="ddd, MMM dd, yyyy"></DatePicker>
+                        <TimePicker x:Name="tpEventTime" Format="hh:mm tt"></TimePicker>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Margin="0,0,0,10">
+                    <Label Text="Location" FontSize="Medium" FontAttributes="Bold"></Label>
+                    <Entry x:Name="entryLocation" Placeholder="Type here..." Keyboard="Email"></Entry>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="0,0,0,10">
+                    <Label Text="Done" FontSize="Medium" FontAttributes="Bold"
+                           HorizontalOptions="FillAndExpand"></Label>
+                    <Switch x:Name="switchDone" HorizontalOptions="End"></Switch>
+                </StackLayout>
+
+                <Button x:Name="btnSave" Text="SAVE" Clicked="BtnSave_Clicked"></Button>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

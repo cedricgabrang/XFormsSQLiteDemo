@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XFormsSQLiteDemo.EventsListPage"
+             Title="Events List">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="New"
+                     Clicked="ToolbarItem_Clicked"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="listViewEvent" HasUnevenRows="True" SeparatorVisibility="Default" ItemTapped="ListViewEvent_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" BackgroundColor="White">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Title}" FontSize="Medium"
+                                       FontAttributes="Bold" HorizontalOptions="FillAndExpand"></Label>
+                                    <Label Text="{Binding EventDate, StringFormat='{0:ddd, MMM dd, yyyy hh:mm tt}'}" FontSize="Default" HorizontalOptions="End"></Label>
+                                </StackLayout>
+
+                                <Label Text="{Binding Location}" FontSize="Default"></Label>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <StackLayout x:Name="stackActionButtons" Orientation="Horizontal" IsEnabled="False">
+                <Button x:Name="btnEdit" Text="EDIT" HorizontalOptions="FillAndExpand" Clicked="btnEdit_Clicked"></Button>
+                <Button x:Name="btnDelete" Text="DELETE" HorizontalOptions="FillAndExpand" Clicked="btnDelete_Clicked"></Button>
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
